@@ -1,0 +1,68 @@
+<template>
+    <form class="ui form segment">
+        <h4 class="ui dividing header">Requested Order</h4>
+        <div class="two fields">
+            <div class="field">
+                <label for="customer">Customer</label>
+                <select id="customer" name="customer">
+                    <option>Choose Customer</option>
+                    <option>Wegner's</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Arrival Date</label>
+                <div class="calendar">
+                    <span>${dateDisplay}</span>
+                </div>
+            </div>
+        </div>
+        <div class="three fields">
+            <div class="field">
+                <label for="variety">Variety</label>
+                <select id="variety" name="variety">
+                    <option>Cyclamen</option>
+                    <option>Kalanchoe</option>
+                    <option>Potted Mums</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="size">Size</label>
+                <select id="size" name="size">
+                    <option>4"</option>
+                    <option>4.5"</option>
+                    <option>6"</option>
+                    <option>10"</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity">
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+        <div class="ui grid">
+            <div class="eight wide column">&nbsp;</div>
+            <label class="four wide column">Stick Date</label>
+            <div class="four wide column">
+                ${stickDateDisplay}
+            </div>
+
+            <div class="eight wide column">&nbsp;</div>
+            <label class="four wide column">Lights-Out</label>
+            <div class="four wide column">
+                ${lightsOutDateDisplay}
+            </div>
+        </div>
+
+        <h5 class="ui dividing header">Availability</h5>
+        <div class="ui center aligned segment">
+            <a class="ui red circular label">A</a>
+            <a class="ui red circular label">B</a>
+            <a class="ui green circular label">D</a>
+            <a class="ui green circular label">E</a>
+            <a class="ui green circular label">F</a>
+        </div>
+    </form>
+</template>
