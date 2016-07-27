@@ -42,31 +42,48 @@
         </div>
 
         <div class="ui divider"></div>
-        <div class="ui grid" show.bind="date">
-            <div class="four wide column">&nbsp;</div>
-            <label class="six wide column">Stick Date</label>
-            <div class="six wide column">
-                ${stickDateDisplay}
-            </div>
-
-            <div class="four wide column">&nbsp;</div>
-            <label class="six wide column">Lights-Out (${lightsOutDuration})</label>
-            <div class="six wide column">
-                ${lightsOutDateDisplay}
-            </div>
-
-            <div class="four wide column">&nbsp;</div>
-            <label class="six wide column">Flower Lead Time (${flowerLeadTimeDuration})</label>
-            <div class="six wide column">
-                ${flowerLeadTimeDisplay}
-            </div>
-
-            <div class="four wide column">&nbsp;</div>
-            <label class="six wide column">Ship Date</label>
-            <div class="six wide column">
-                ${shipDateDisplay}
-            </div>
-        </div>
+        <table class="ui table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Length</th>
+                    <th>Start</th>
+                    <th>Tables</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Stick Date</td>
+                    <td>&nbsp;</td>
+                    <td>11.3</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Propagation Time</td>
+                    <td>3 weeks</td>
+                    <td>11.3</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Lights-Out</td>
+                    <td>3 weeks</td>
+                    <td>14.3</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Flower Lead Time</td>
+                    <td>4 days</td>
+                    <td>14.3</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Ship Date</td>
+                    <td>&nbsp;</td>
+                    <td>15.1</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h5 class="ui dividing header">Availability</h5>
         <div class="ui center aligned segment">
@@ -78,6 +95,6 @@
         </div>
 
         <div class="ui divider"></div>
-        <a href="#table-base">Next &gt;</a>
+        <a href="#table-2">Next &gt;</a>
     </form>
 </template>

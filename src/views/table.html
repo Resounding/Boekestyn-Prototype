@@ -1,0 +1,169 @@
+<template>
+    <form class="ui form segment">
+        <h4 class="ui dividing header">Requested Order</h4>
+        <div class="two fields">
+            <div class="field">
+                <label for="customer">Customer</label>
+                <select id="customer" name="customer">
+                    <option>Choose Customer</option>
+                    <option>Wegner's</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Arrival Date</label>
+                <div class="calendar">
+                    <span>Fri, May 6</span>
+                </div>
+            </div>
+        </div>
+        <div class="three fields">
+            <div class="field">
+                <label for="variety">Variety</label>
+                <select id="variety" name="variety">
+                    <option>Cyclamen</option>
+                    <option>Kalanchoe</option>
+                    <option>Potted Mums</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="size">Size</label>
+                <select id="size" name="size">
+                    <option>4"</option>
+                    <option>4.5"</option>
+                    <option>6"</option>
+                    <option>10"</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" value="750">
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+        <table class="ui table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th class="center aligned">Week</th>
+                    <th class="center aligned">Tables</th>
+                    <th class="center aligned">A</th>
+                    <th class="center aligned">B</th>
+                    <th class="center aligned">D</th>
+                    <th class="center aligned">E</th>
+                    <th class="center aligned">F</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="ui ribbon label">Stick (<span style="text-decoration: underline; cursor:pointer;">Wed, Mar 16</span>)</div>
+                    </td>
+                    <td class="center aligned">11</td>
+                    <td class="center aligned">9</td>
+                    <td class="positive center aligned">20</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="positive center aligned">45</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="center aligned">12</td>
+                    <td class="center aligned">9</td>
+                    <td class="positive center aligned">20</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="positive center aligned">45</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ui ribbon label">
+                            Partial Space
+                            <span class="ui meta small">(<span style="text-decoration: underline; cursor:pointer;">Fri, Apr 1</span>)</span>
+                        </div>
+                    </td>
+                    <td class="center aligned">13</td>
+                    <td class="center aligned">15</td>
+                    <td class="positive center aligned">20</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="negative center aligned">14</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ui ribbon label lights-out" hide.bind="moveLightsOut">
+                            Lights out
+                            <span class="ui meta small">(<span style="text-decoration: underline; cursor:pointer;">Wed, Apr 6</span>)</span>
+                        </div>
+                    </td>
+                    <td class="center aligned">14</td>
+                    <td class="center aligned">${moveLightsOut ? '15' : '27'}</td>
+                    <td class="${moveLightsOut ? 'positive' : 'negative'} center aligned">20</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="negative center aligned">14</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ui ribbon label lights-out" show.bind="moveLightsOut">
+                            Lights out
+                            <span class="ui meta small">(<span style="text-decoration: underline; cursor:pointer;">Wed, Apr 13</span>)</span>
+                        </div>
+                    </td>
+                    <td class="center aligned">15</td>
+                    <td class="center aligned">27</td>
+                    <td class="negative center aligned">20</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="negative center aligned">14</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="center aligned">16</td>
+                    <td class="center aligned">27</td>
+                    <td class="positive center aligned">38</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="negative center aligned">14</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ui ribbon label">
+                            Flowering Lead Time
+                            <span class="ui meta small">(<span style="text-decoration: underline; cursor:pointer;">Mon, May 2</span>)</span>
+                        </div>
+                    </td>
+                    <td class="center aligned">17</td>
+                    <td class="center aligned">27</td>
+                    <td class="positive center aligned">38</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="negative center aligned">14</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ui ribbon label">
+                            Ship Date
+                            <span class="ui meta small">(<span style="text-decoration: underline; cursor:pointer;">Fri, May 6</span>)</span>
+                        </div>
+                    </td>
+                    <td class="center aligned">18</td>
+                    <td class="center aligned">27</td>
+                    <td class="positive center aligned">38</td>
+                    <td class="positive center aligned">35</td>
+                    <td class="positive center aligned">32</td>
+                    <td class="positive center aligned">79</td>
+                    <td class="negative center aligned">14</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</template>

@@ -1,26 +1,27 @@
 import {autoinject} from 'aurelia-framework';
 import Moment = moment.Moment;
 
-const DATE_FORMAT = 'ddd, MMM D';
+const DATE_FORMAT = 'MMM D, YYYY';
 
 @autoinject()
 export class Calculator {
-    date:Moment;
+    date:Moment = moment(new Date(2016,4,6));
     flowerLeadTimeDate:Moment;
-    lightsOutDate:Moment;
+    lightsOutDate:Moment = moment(new Date(2016,3,6));
     stickDate:Moment;
-    quantity:number = 0;
+    moveLightsOut:boolean = false;
 
     constructor(private element:Element) { }
 
     attached() {
-        $('.calendar', this.element).calendar({
+        var that = this;
+        $('.ui.ribbon.label', this.element).calendar({
             type: 'date',
-            onChange: (val:string) => {
-                this.date = moment(val);
-                this.flowerLeadTimeDate = this.date.clone().add(-4, 'days');
-                this.lightsOutDate = this.flowerLeadTimeDate.clone().add(-3, 'weeks');
-                this.stickDate = this.lightsOutDate.clone().add(-3, 'weeks');
+            onChange: function(val:string) {
+                if($(this).hasClass('lights-out')) {
+                    that.moveLightsOut = !that.moveLightsOut;
+                    that.lightsOutDate = moment(new Date(2016,3,13));
+                }
             }
         });
 

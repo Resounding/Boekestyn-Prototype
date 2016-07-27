@@ -1,11 +1,11 @@
 import {autoinject} from 'aurelia-framework';
 import Moment = moment.Moment;
 
-const DATE_FORMAT = 'ddd, MMM D';
+const DATE_FORMAT = 'MMM D, YYYY';
 
 @autoinject()
 export class Calculator {
-    date:Moment;
+    date:Moment = moment(new Date(2016,3,11));
     flowerLeadTimeDate:Moment;
     lightsOutDate:Moment;
     stickDate:Moment;
