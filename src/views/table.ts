@@ -10,6 +10,7 @@ export class Calculator {
     lightsOutDate:Moment = moment(new Date(2016,3,6));
     stickDate:Moment;
     moveLightsOut:boolean = false;
+    partialSpace:boolean = false;
 
     constructor(private element:Element) { }
 
